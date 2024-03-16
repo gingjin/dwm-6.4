@@ -64,8 +64,23 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+#include <X11/XF86keysym.h>
+
+/* volume */
+static const char *incvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *decvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+
+/* brightness */
+static const char *incbri[]  = { "xbacklight", "-inc", "5", NULL };
+static const char *decbri[]  = { "xbacklight", "-dec", "5", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = incvol } },
+	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = decvol } },
+	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = incbri } },
+	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = decbri } },
+
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
