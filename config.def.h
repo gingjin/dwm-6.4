@@ -75,12 +75,16 @@ static const char *decvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-
 static const char *incbri[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *decbri[]  = { "xbacklight", "-dec", "5", NULL };
 
+/* slock */
+static const char *slock[]  = { "slock", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = incvol } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = decvol } },
 	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = incbri } },
 	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = decbri } },
+	{ MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
 
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
