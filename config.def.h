@@ -88,7 +88,7 @@ static const Key keys[] = {
   { 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = incbri } },
   { 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = decbri } },
   { MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
-
+  { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
   { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
   { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
   { MODKEY,                       XK_b,      togglebar,      {0} },
