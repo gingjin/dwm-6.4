@@ -67,8 +67,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray
 static const char *termcmd[]  = { "st", NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 
-#include <X11/XF86keysym.h>
-
 /* volume */
 static const char *incvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *decvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
@@ -80,6 +78,7 @@ static const char *decbri[]  = { "xbacklight", "-dec", "5", NULL };
 /* slock */
 static const char *slock[]  = { "slock", NULL };
 
+#include <X11/XF86keysym.h>
 #include "movestack.c"
 static const Key keys[] = {
 /*  modifier                      key        function        argument */
