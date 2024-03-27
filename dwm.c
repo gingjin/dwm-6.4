@@ -1715,8 +1715,11 @@ runautostart(void)
 		free(pathpfx);
 	}
 
-	if (access(path, X_OK) == 0)
-		system(path);
+	if (access(path, X_OK) == 0) {
+		int systemRet = system(path);
+    if (systemRet == -1)
+      return;
+  }
 
 	/* now the non-blocking script */
 	if (sprintf(path, "%s/%s", pathpfx, autostartsh) <= 0) {
@@ -1724,8 +1727,11 @@ runautostart(void)
 		free(pathpfx);
 	}
 
-	if (access(path, X_OK) == 0)
-		system(strcat(path, " &"));
+	if (access(path, X_OK) == 0) {
+		int systemRet = system(strcat(path, " &"));
+    if (systemRet == -1)
+      return;
+  }
 
 	free(pathpfx);
 	free(path);
