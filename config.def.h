@@ -78,6 +78,11 @@ static const char *decbri[]  = { "xbacklight", "-dec", "5", NULL };
 /* slock */
 static const char *slock[]  = { "slock", NULL };
 
+/* screenshot */
+static const char *shotgui[] = { "flameshot", "gui", NULL };
+static const char *shotscreen[] = { "flameshot", "screen", NULL };
+static const char *shotfull[] = { "flameshot", "full", NULL };
+
 #include <X11/XF86keysym.h>
 #include "movestack.c"
 static const Key keys[] = {
@@ -86,6 +91,9 @@ static const Key keys[] = {
   { 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = decvol } },
   { 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = incbri } },
   { 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = decbri } },
+  { 0,                            XK_Print,  spawn,          {.v = shotgui } },
+  { ShiftMask,                    XK_Print,  spawn,          {.v = shotscreen } },
+  { ControlMask|ShiftMask,        XK_Print,  spawn,          {.v = shotfull } },
   { MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
   { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
   { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
