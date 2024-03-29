@@ -65,6 +65,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray
 static const char *termcmd[]  = { "st", NULL };
 /* rofi */
 static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
+/* volume */
+static const char *volinc[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *voldec[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
