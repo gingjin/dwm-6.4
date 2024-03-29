@@ -68,6 +68,9 @@ static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 /* volume */
 static const char *volinc[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *voldec[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+/* brightness */
+static const char *briinc[]  = { "xbacklight", "-inc", "5", NULL };
+static const char *bridec[]  = { "xbacklight", "-dec", "5", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
