@@ -81,6 +81,7 @@ static const Key keys[] = {
 	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = bridec } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volinc } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldec } },
+	{ MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
