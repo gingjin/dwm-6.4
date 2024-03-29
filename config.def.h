@@ -69,8 +69,11 @@ static const char *rofi[]  = { "rofi", "-show", "drun", NULL };
 static const char *volinc[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *voldec[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 
+#include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volinc } },
+	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldec } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
