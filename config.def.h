@@ -71,6 +71,8 @@ static const char *voldec[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-
 /* brightness */
 static const char *briinc[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *bridec[]  = { "xbacklight", "-dec", "5", NULL };
+/* slock */
+static const char *slock[]  = { "slock", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
