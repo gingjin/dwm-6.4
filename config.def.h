@@ -75,6 +75,8 @@ static const char *bridec[]  = { "xbacklight", "-dec", "5", NULL };
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = briinc } },
+	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = bridec } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volinc } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldec } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
