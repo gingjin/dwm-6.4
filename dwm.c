@@ -1703,10 +1703,10 @@ runautostart(void)
 		/* system(path); */
 		FILE *fp = popen(path, "r");
 		if (fp == NULL)
-			exit(1);
+			return;
 		int fc = pclose(fp);
 		if (fc == -1)
-			exit(1);
+			return;
 	}
 
 	/* now the non-blocking script */
@@ -1719,10 +1719,10 @@ runautostart(void)
 		/* system(strcat(path, " &")); */
 		FILE *fp = popen(strcat(path, " &"), "r");
 		if (fp == NULL)
-			exit(1);
+			return;
 		int fc = pclose(fp);
 		if (fc == -1)
-			exit(1);
+			return;
 	}
 
 	free(pathpfx);
