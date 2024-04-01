@@ -75,6 +75,8 @@ static const char *briinc[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *bridec[]  = { "xbacklight", "-dec", "5", NULL };
 /* slock */
 static const char *slock[]  = { "slock", NULL };
+/* screenshot */
+static const char *shotgui[] = { "flameshot", "gui", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
@@ -83,6 +85,7 @@ static const Key keys[] = {
 	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = bridec } },
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volinc } },
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldec } },
+	{ 0,                            XK_Print,  spawn,          {.v = shotgui } },
 	{ MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
