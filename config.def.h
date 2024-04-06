@@ -77,14 +77,23 @@ static const char *bridec[]  = { "xbacklight", "-dec", "5", NULL };
 static const char *slock[]  = { "slock", NULL };
 /* screenshot */
 static const char *shotgui[] = { "flameshot", "gui", NULL };
+/* mpc */
+static const char *mpcplay[] = { "mpc", "play", NULL };
+static const char *mpcstop[] = { "mpc", "stop", NULL };
+static const char *mpcnext[] = { "mpc", "next", NULL };
+static const char *mpcprev[] = { "mpc", "prev", NULL };
 
 #include <X11/XF86keysym.h>
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0,         XF86XK_MonBrightnessUp,       spawn,          {.v = briinc } },
-	{ 0,         XF86XK_MonBrightnessDown,     spawn,          {.v = bridec } },
-	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volinc } },
-	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldec } },
+	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = briinc } },
+	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = bridec } },
+	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = volinc } },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = voldec } },
+	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = mpcplay } },
+	{ 0,            XF86XK_AudioStop,          spawn,          {.v = mpcstop } },
+	{ 0,            XF86XK_AudioNext,          spawn,          {.v = mpcnext } },
+	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = mpcprev } },
 	{ 0,                            XK_Print,  spawn,          {.v = shotgui } },
 	{ MODKEY|ControlMask|ShiftMask, XK_l,      spawn,          {.v = slock } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = rofi } },
