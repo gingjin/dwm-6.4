@@ -79,6 +79,7 @@ static const char *slock[]  = { "slock", NULL };
 static const char *shotgui[] = { "flameshot", "gui", NULL };
 /* mpc */
 static const char *mpcplay[] = { "mpc", "play", NULL };
+static const char *mpcpause[] = { "mpc", "pause", NULL };
 static const char *mpcstop[] = { "mpc", "stop", NULL };
 static const char *mpcnext[] = { "mpc", "next", NULL };
 static const char *mpcprev[] = { "mpc", "prev", NULL };
@@ -91,6 +92,7 @@ static const Key keys[] = {
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = volinc } },
 	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = voldec } },
 	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = mpcplay } },
+	{ 0,            XK_Pause,                  spawn,          {.v = mpcpause } },
 	{ 0,            XF86XK_AudioStop,          spawn,          {.v = mpcstop } },
 	{ 0,            XF86XK_AudioNext,          spawn,          {.v = mpcnext } },
 	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = mpcprev } },
